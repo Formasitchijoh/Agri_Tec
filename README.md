@@ -1,4 +1,3 @@
-A README file is an essential component of any software project, as it provides important information about the project and its features. Here's an example of how you can write a detailed README file for the Agri-Tec project:
 
 # Agri-Tec
 
@@ -40,27 +39,6 @@ Agri-Tec is built with the following technologies:
 - Django: A high-level Python web framework
 - PostgreSQL: A powerful, open-source relational database management system
 
-## Contributing
-
-If you would like to contribute to Agri-Tec, follow these steps:
-
-1. Fork the repository and clone it to your local machine
-2. Create a new branch for your feature: `git checkout -b my-new-feature`
-3. Make your changes and commit them: `git commit -m "Add some feature"`
-4. Push your changes to your fork: `git push origin my-new-feature`
-5. Create a pull request on the original repository
-
-## License
-
-Agri-Tec is released under the MIT license. See `LICENSE` for more information.
-
-## Contact
-
-If you have any questions or feedback about Agri-Tec, please contact us at agritec@example.com.
-
-## Acknowledgements
-
-We would like to thank the following contributors for their contributions to Agri-Tec:
-
-- John Doe: Feature X
-- Jane Doe: Feature Y
+## Deployment
+Agri-tec is deployed to vercel click the [https://agri-tec-c7ff.vercel.app/](https://agri-tec-c7ff.vercel.app/) access the application  due to time contarint the application was build using 
+iPhone 12 Pro on google chrome to get the best experince from the application resize you screen to this mobile view,   
