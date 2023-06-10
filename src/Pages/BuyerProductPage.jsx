@@ -65,6 +65,7 @@ const BuyerPage = () => {
     </div>
 
           <div style={{width:'100%',}}>
+          {/* <SelectDropDown  selectItems={productArray} selectedOption={selectedOption} handleChange={handleChange}/> */}
 
            
         {products.map((item)=>(

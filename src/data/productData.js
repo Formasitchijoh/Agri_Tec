@@ -9,7 +9,7 @@ import yam from '../resources/yams.jpg'
         products:[
             {
                 name:'Egussi',
-                price:'122200',
+                price:'122',
                 quantity:'5',
                 location:'Ngoundere',
                 image:<img src={egusi} alt="item"/>
@@ -18,7 +18,7 @@ import yam from '../resources/yams.jpg'
             {
                
                 name:'CoCoa',
-                price:'122200',
+                price:'12573400',
                 quantity:'5',
                 location:'Ngoundere',
                 image:<img src={yam} alt="item"/>
@@ -26,7 +26,7 @@ import yam from '../resources/yams.jpg'
             {
                 
                 name:'CoCoa',
-                price:'122200',
+                price:'123200',
                 quantity:'5',
                 location:'Ngoundere',
                 image:<img src={yam} alt="item"/>
@@ -44,7 +44,7 @@ import yam from '../resources/yams.jpg'
         products:[
             {
                 name:'HucleBerry',
-                price:'122200',
+                price:'190200',
                 quantity:'5',
                 location:'Yoalmu',
                 image:<img src={garri} alt="item"></img>
@@ -61,7 +61,7 @@ import yam from '../resources/yams.jpg'
             {
                
                 name:'Beans',
-                price:'122200',
+                price:'1243200',
                 quantity:'5',
                 location:'Mayui',
                 image:<img src={egusi} alt="item"></img>

@@ -3,31 +3,9 @@ import '../style.css'
 import SelectDropDown from '../Components/SelectDropDown'
 import Menu from '../Components/Menu'
 import garri from '../resources/egusi.jpg'
-import selectItems from '../Components/datastore'
+import Select from 'react-select'
+// import selectItems from '../Components/datastore'
 import productArray from '../data/productData'
-const ProductCategory = [
-    {
-      value: 1,
-      text: 'Food Stock',
-  
-    },
-    {
-      value: 2,
-      text: 'Cash Crop',
-   
-    },
-    {
-      value: 3,
-      text: 'Dairy Food',
-   
-    },
-    {
-      value: 4,
-      text: 'LiveStock',
-   
-    }
-  ]
-
 
   const InputFieldWithLabel = (props) => {
     return (
@@ -45,24 +23,7 @@ const ProductCategory = [
       </div>
     )
   }
-  function MyComponent() {
-    const [inputValue, setInputValue] = useState('');
-  
-    const handleInputChange = (event) => {
-      setInputValue(event.target.value);
-    };
-  
-    return (
-      <div>
-        {/* <input type="text" value={inputValue} onChange={handleInputChange} /> */}
-        {/* <p>The input value is: {inputValue}</p> */}
-        
-      <InputFieldWithLabel label={'Hello'} value={inputValue} handleInputChange={handleInputChange} />
-      <button onClick={()=> alert(inputValue)}>Click to Submit the form</button>
-      
-      </div>
-    );
-  }
+ 
   function MyComponents() {
     const [formData, setFormData] = useState({
       name: '',
@@ -109,9 +70,15 @@ const ProductCategory = [
   }
 
 
+
 const UploadProductPage = () => {  
 const [product, setproduct] = useState({category:'',name:'', price:'', quantity:'', location:''})
-const [selectedOption, setselectedOption] = useState(null)
+// const [addProduct, setaddProduct] = useState(product)
+const [selectedOption, setselectedOption] = useState(product)
+const [productIndex, setproductIndex] = useState(0)
+const {category, id, products} = productArray[productIndex];
+const [holdProduct, setHoldProducts] = useState(products)
+const [test, settest] = useState(false)
 
 const handleInputChange = (event) => {
   const { name, value } = event.target;
@@ -119,41 +86,87 @@ const handleInputChange = (event) => {
  
 };
 
+// const handleSubmit = (event) => {
+//   event.preventDefault();
+//   setHoldProducts([...products, product])
+//   alert('hello')
+//   alert(holdProduct[holdProduct.length - 1].price + " " + product.price+ " " + productIndex )
+
+// };
 const handleSubmit = (event) => {
   event.preventDefault();
- console.log(product.name + product.price);
+  const updatedProducts = productArray.map((productObj, index) => {
+    if (index === productIndex) {
+      return {
+        ...productObj,
+        products: [...productObj.products, product]
+      };
+    }
+    return productObj;
+  });
+  setHoldProducts(updatedProducts[productIndex].products);
 
-  // Do something with the form data, such as sending it to a server
+  alert(holdProduct[productIndex].products[productIndex].price )
 };
+
+//state and handler for managing the search product page
+const handleChange = e => {
+  setselectedOption(e);
+}
+
+const handleAddProduct = () => {
+ 
+    
+}
   
   return (
     <div className='uploadproduct-container'>
          <Menu pageName='Add Product'/>
-         {/* <h1 style={{marginLeft:'1em', fontSize:'3em'}}>
-          Add Product
-         </h1> */}
-
-         {/* <MyComponents/> */}
          <form className='addproduct-container' onSubmit={handleSubmit}>
           <div className='inputContainer'>
           <label className='label'>
               Select Product Category
               </label>
-            <SelectDropDown  selectItems={productArray} selectedOption={selectedOption} setselectedOption={setselectedOption} />
-          </div>
+              <Select
+                placeholder="Select Option"
+                isClearable={true}
+                value={selectedOption}
+                options={productArray}
+                onChange={handleChange}
+                getOptionLabel={e => (
+                  <div style={{}} onClick={()=>setproductIndex(e.id)}>
+                      {e.icon}
+                      <span style={{marginLeft:5}}>{e.category}</span>
+                  </div>
+      )
+    } 
+      />
+      {selectedOption && <div style={{marginTop:20,lineHeight:'25px'}}>
+        <b>Selected Option:</b>{productIndex}
+        </div>}
+    </div>
+
           <InputFieldWithLabel itemValue={product.name} name='name' handleInputChange={handleInputChange} label={"Product-Name"}/>
           <InputFieldWithLabel itemValue={product.quantity} name='quantity' handleInputChange={handleInputChange}  label={"Quantity"}/>
           <InputFieldWithLabel itemValue={product.price} name="price" handleInputChange={handleInputChange} label={"Price"}/>
           <InputFieldWithLabel itemValue={product.location} name='location'handleInputChange={handleInputChange}  label={"Location"}/>
-          <div style={{marginTop:'1em', marginLeft:'0.2em', width:'100%', height:'12em'}}>
+          {/* <div style={{marginTop:'1em', marginLeft:'0.2em', width:'100%', height:'12em'}}>
           <label className='label'>
           Select Image
            </label>
           <img src={garri} alt='' style={{ width:'90%', marginTop:'0.5em', marginLeft:'0.2em', borderRadius:'0.5em', height:'100%'}}/>
-      </div> 
-           
-           <button style={{marginTop:'6em',  marginLeft:'5em',width:'8em', height:'3em', color:'black', fontSize:'0.8em', fontWeight:'40em', backgroundColor:'#4c8352'}} onClick={()=> alert(product.name + " " + product.price + " "  + ""  + selectItems[selectedOption.value].text + " " + selectItems[selectedOption.value].value)} type='submit'>Submit</button>
+      </div>  */}
+      {/* alert(  productArray[productIndex].category +   " " + product.name + " " + product.price + " "  +  product.quantity + ""+ product.location + " " ) */}
+           <button style={{marginTop:'6em',  marginLeft:'5em',width:'8em', height:'3em', color:'black', fontSize:'0.8em', fontWeight:'40em', backgroundColor:'#4c8352'}} 
+           onClick={()=> handleAddProduct} type='submit'>Submit</button>
         </form>
+
+        <span>{
+          
+          products.map(e => (
+            <h2>{e.name}</h2>
+          ))
+          }</span>
 
     </div>
   )
