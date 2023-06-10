@@ -28,28 +28,6 @@ const ProductCarts = (props) => {
     )
   }
 
-  // const BuyerPage = (props) => {
-  //   const [showProduct, setShowProduct] = useState(false);
-    
-  //   const handleClick = () => {
-  //     setShowProduct(true);
-  //   }
-  
-  //   return (
-  //     <div className=' scroll' onClick={handleClick}>
-  //       {props.food}
-  //       <div className='textContainer scrollItem'>
-  //         <span style={{fontSize:'1.2em',fontWeight:'bold ',marginBottom:'0.5em'}}>{props.name}</span><br/>
-  //         <span style={{fontSize:'1em',fontWeight:'bold ', marginTop:'0.1em'}}>price: {props.price} XAF</span><br/>
-  //         <span style={{fontSize:'1em',fontWeight:'bold ', marginTop:'0.1em'}}>Qty: {props.quantity} </span><br/>
-  //         <span style={{fontSize:'1em',fontWeight:'bold ', marginTop:'0.1em'}}>location: {props.location} </span><br/>
-  //       </div> 
-  //       {showProduct && <ProductItem {...props} />}
-  //     </div>
-  //   )
-  // }
-  
-
 const BuyerPage = () => {
   const [productIndex, setproductIndex] = useState(0)
   const {category, id, products} = productArray[productIndex];

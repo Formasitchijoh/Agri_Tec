@@ -17,11 +17,12 @@ const Menu = ({pageName}) => {
         
         {menuOpen && (
           <div className="menu">
+              {/* <Link  style={{ textDecoration: 'none', color: 'inherit' }} to="/LoginPage">Login </Link><hr className='menu-line'/> */}
          <Link    style={{ textDecoration: 'none', color: 'inherit' }} to="/"> Home</Link> <hr className='menu-line'/>
          <Link style={{ textDecoration: 'none', color: 'inherit' }}  to="/UploadProductPage">Update Product </Link><hr className='menu-line'/>
-           <Link  style={{ textDecoration: 'none', color: 'inherit' }} to="/SignUpPage">SignUp </Link><hr className='menu-line'/>
-           <Link  style={{ textDecoration: 'none', color: 'inherit' }} to="/LoginPage">Login </Link><hr className='menu-line'/>
            <Link  style={{ textDecoration: 'none', color: 'inherit' }} to="/ProductItem">Item </Link><hr className='menu-line'/>
+           <Link  style={{ textDecoration: 'none', color: 'inherit' }} to="/SignUpPage">SignUp </Link><hr className='menu-line'/>
+
 
            
           {/* </div> */}

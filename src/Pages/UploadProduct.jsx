@@ -89,8 +89,7 @@ const handleInputChange = (event) => {
 const handleSubmit = (event) => {
   event.preventDefault();
   setHoldProducts([...products, product])
-  alert('hello')
-  alert(holdProduct[holdProduct.length - 1].price + " " + product.price+ " " + productIndex )
+
 
 };
 // const handleSubmit = (event) => {
@@ -114,11 +113,7 @@ const handleChange = e => {
   setselectedOption(e);
 }
 
-const handleAddProduct = () => {
- 
-    
-}
-  
+
   return (
     <div className='uploadproduct-container'>
          <Menu pageName='Add Product'/>
@@ -162,7 +157,14 @@ const handleAddProduct = () => {
       </div> 
            <button style={{marginTop:'6em',  marginLeft:'5em',width:'8em', height:'3em', color:'black', fontSize:'0.8em', fontWeight:'40em', backgroundColor:'#4c8352'}} 
            onClick={()=>
-                  alert(  productArray[productIndex].category +   " " + product.name + " " + product.price + " "  +  product.quantity + ""+ product.location + " " ) 
+            alert(`
+             created product of Category :  ${ productArray[productIndex].category} 
+            Name  : ${product.name } 
+             Price  : ${ product.price} 
+            Quantity :  ${ product.quantity} 
+           Location :  ${product.location} 
+            `)
+                  // alert(   productArray[productIndex].category +   " " + product.name + " " + product.price + " "  +  product.quantity + ""+ product.location + " " ) 
            } type='submit'>Submit</button>
         </form>
 

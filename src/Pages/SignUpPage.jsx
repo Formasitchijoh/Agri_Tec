@@ -147,7 +147,7 @@ const validationSchema =
 
     return( 
         <div className='main'>
-            <Menu pageName='SignUp'/>
+            {/* <Menu pageName='SignUp'/> */}
             <Welcome /> 
       
         <div className='formik-container'> 
