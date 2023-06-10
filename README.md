@@ -40,5 +40,7 @@ Agri-Tec is built with the following technologies:
 - PostgreSQL: A powerful, open-source relational database management system
 
 ## Deployment
-Agri-tec is deployed to vercel click the [https://agri-tec-c7ff.vercel.app/](https://agri-tec-c7ff.vercel.app/) access the application  due to time contarint the application was build using 
-iPhone 12 Pro on google chrome to get the best experince from the application resize you screen to this mobile view,   
+- Click the following link to access the Agri-tec application: https://agri-tec-c7ff.vercel.app/
+- The application was built using an iPhone 12 Pro on Google Chrome, so to get the best experience from the application, it is recommended to resize your screen to a mobile view.
+- To resize your screen to a mobile view on Google Chrome, you can press `Ctrl+Shift+M` (Windows/Linux) or `Command+Shift+M` (Mac) on your keyboard. This will open the developer tools in mobile view mode. Alternatively, you can click the three dots in the top-right corner of the Chrome window, then click "More Tools" > "Developer Tools", and then click the "Toggle device toolbar" button in the top-left corner of the developer tools window.
+- Once you are in mobile view mode, you should be able to interact with the application as if you were using it on an iPhone 12 Pro.
