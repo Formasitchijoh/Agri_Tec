@@ -86,28 +86,28 @@ const handleInputChange = (event) => {
  
 };
 
-// const handleSubmit = (event) => {
-//   event.preventDefault();
-//   setHoldProducts([...products, product])
-//   alert('hello')
-//   alert(holdProduct[holdProduct.length - 1].price + " " + product.price+ " " + productIndex )
-
-// };
 const handleSubmit = (event) => {
   event.preventDefault();
-  const updatedProducts = productArray.map((productObj, index) => {
-    if (index === productIndex) {
-      return {
-        ...productObj,
-        products: [...productObj.products, product]
-      };
-    }
-    return productObj;
-  });
-  setHoldProducts(updatedProducts[productIndex].products);
+  setHoldProducts([...products, product])
+  alert('hello')
+  alert(holdProduct[holdProduct.length - 1].price + " " + product.price+ " " + productIndex )
 
-  alert(holdProduct[productIndex].products[productIndex].price )
 };
+// const handleSubmit = (event) => {
+//   event.preventDefault();
+//   const updatedProducts = productArray.map((productObj, index) => {
+//     if (index === productIndex) {
+//       return {
+//         ...productObj,
+//         products: [...productObj.products, product]
+//       };
+//     }
+//     return productObj;
+//   });
+//   setHoldProducts(updatedProducts[productIndex].products);
+
+//   alert(holdProduct[productIndex].products[productIndex].price )
+// };
 
 //state and handler for managing the search product page
 const handleChange = e => {
@@ -127,6 +127,8 @@ const handleAddProduct = () => {
           <label className='label'>
               Select Product Category
               </label>
+              <div style={{ width:'95%', marginTop:'1em', marginBottom:'1em'}}> 
+
               <Select
                 placeholder="Select Option"
                 isClearable={true}
@@ -141,32 +143,28 @@ const handleAddProduct = () => {
       )
     } 
       />
-      {selectedOption && <div style={{marginTop:20,lineHeight:'25px'}}>
+
+      </div>
+      {/* {selectedOption && <div style={{marginTop:20,lineHeight:'25px'}}>
         <b>Selected Option:</b>{productIndex}
-        </div>}
+        </div>} */}
     </div>
 
           <InputFieldWithLabel itemValue={product.name} name='name' handleInputChange={handleInputChange} label={"Product-Name"}/>
           <InputFieldWithLabel itemValue={product.quantity} name='quantity' handleInputChange={handleInputChange}  label={"Quantity"}/>
           <InputFieldWithLabel itemValue={product.price} name="price" handleInputChange={handleInputChange} label={"Price"}/>
           <InputFieldWithLabel itemValue={product.location} name='location'handleInputChange={handleInputChange}  label={"Location"}/>
-          {/* <div style={{marginTop:'1em', marginLeft:'0.2em', width:'100%', height:'12em'}}>
+          <div style={{marginTop:'1em', marginLeft:'0.2em', width:'100%', height:'12em'}}>
           <label className='label'>
           Select Image
            </label>
           <img src={garri} alt='' style={{ width:'90%', marginTop:'0.5em', marginLeft:'0.2em', borderRadius:'0.5em', height:'100%'}}/>
-      </div>  */}
-      {/* alert(  productArray[productIndex].category +   " " + product.name + " " + product.price + " "  +  product.quantity + ""+ product.location + " " ) */}
+      </div> 
            <button style={{marginTop:'6em',  marginLeft:'5em',width:'8em', height:'3em', color:'black', fontSize:'0.8em', fontWeight:'40em', backgroundColor:'#4c8352'}} 
-           onClick={()=> handleAddProduct} type='submit'>Submit</button>
+           onClick={()=>
+                  alert(  productArray[productIndex].category +   " " + product.name + " " + product.price + " "  +  product.quantity + ""+ product.location + " " ) 
+           } type='submit'>Submit</button>
         </form>
-
-        <span>{
-          
-          products.map(e => (
-            <h2>{e.name}</h2>
-          ))
-          }</span>
 
     </div>
   )

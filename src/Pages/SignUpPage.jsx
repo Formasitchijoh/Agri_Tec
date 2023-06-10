@@ -182,12 +182,17 @@ const validationSchema =
 
                 </div>
             <div className='modal'>
+
+                <Link to='/LoginPage'>
                 <button type="reset" className='confirm' onClick={()=>
                 {
                     formik.resetForm();
                     setisShow(false)
                 }
                 } >Confirm</button>
+
+                </Link>
+                
                 <button className='Edit' onClick={()=> {
                     setisShow(false)
                 }}>Edit</button>

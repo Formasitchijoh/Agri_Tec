@@ -10,21 +10,44 @@ import Menu from '../Components/Menu'
 import SelectDropDown from '../Components/SelectDropDown'
 import productArray from '../data/productData'
 import '../style.css'
+import ProductItem from './ProductItem'
+
 const ProductCarts = (props) => {
     return(
-        <div className=' scroll' onClick={()=>alert('Youclicked me')}>
+        <div className=' scroll' onClick={props.handleShowItem }>
                 {props.food}
             <div className='textContainer scrollItem'>
-            <span style={{fontSize:'1.2em',fontWeight:'bold ',marginBottom:'0.5em'}}> {props.name}</span><br/>
-                <span style={{fontSize:'1em',fontWeight:'bold ', marginTop:'0.1em'}}> {props.price} XAF</span><br/>
-                <span style={{fontSize:'1em',fontWeight:'bold ', marginTop:'0.1em'}}> {props.quantity} </span><br/>
-                <span style={{fontSize:'1em',fontWeight:'bold ', marginTop:'0.1em'}}> {props.location} </span><br/>
+            <span style={{fontSize:'1.2em',fontWeight:'bold ',marginBottom:'0.5em'}}>{props.name}</span><br/>
+                <span style={{fontSize:'1em',fontWeight:'bold ', marginTop:'0.1em'}}>price: {props.price} XAF</span><br/>
+                <span style={{fontSize:'1em',fontWeight:'bold ', marginTop:'0.1em'}}>Qty: {props.quantity} </span><br/>
+                <span style={{fontSize:'1em',fontWeight:'bold ', marginTop:'0.1em'}}>location: {props.location} </span><br/>
 
             </div> 
   
         </div>
     )
   }
+
+  // const BuyerPage = (props) => {
+  //   const [showProduct, setShowProduct] = useState(false);
+    
+  //   const handleClick = () => {
+  //     setShowProduct(true);
+  //   }
+  
+  //   return (
+  //     <div className=' scroll' onClick={handleClick}>
+  //       {props.food}
+  //       <div className='textContainer scrollItem'>
+  //         <span style={{fontSize:'1.2em',fontWeight:'bold ',marginBottom:'0.5em'}}>{props.name}</span><br/>
+  //         <span style={{fontSize:'1em',fontWeight:'bold ', marginTop:'0.1em'}}>price: {props.price} XAF</span><br/>
+  //         <span style={{fontSize:'1em',fontWeight:'bold ', marginTop:'0.1em'}}>Qty: {props.quantity} </span><br/>
+  //         <span style={{fontSize:'1em',fontWeight:'bold ', marginTop:'0.1em'}}>location: {props.location} </span><br/>
+  //       </div> 
+  //       {showProduct && <ProductItem {...props} />}
+  //     </div>
+  //   )
+  // }
   
 
 const BuyerPage = () => {
@@ -32,6 +55,13 @@ const BuyerPage = () => {
   const {category, id, products} = productArray[productIndex];
   //state and handler for managing the search product page
   const [selectedOption, setselectedOption] = useState(null)
+  const [showitem, setshowitem] = useState(false)
+
+const handleShowItem = () => {
+  setshowitem(true);
+  alert(showitem);
+}
+
   const handleChange = e => {
     setselectedOption(e);
 }
@@ -39,54 +69,44 @@ const BuyerPage = () => {
 
 
   return (
-    <div  className='scroll-hori'> 
-        <Menu pageName='Buyer Page'/>
-        <div style={{ width:'98%', margin:'auto', marginTop:'1em', marginBottom:'1em'}}> 
-      <Select
-      placeholder="Select Option"
-      isClearable={true}
-      value={selectedOption}
-      options={productArray}
-      onChange={handleChange}
-      getOptionLabel={e => (
-        <div style={{}} onClick={()=>setproductIndex(e.id)}>
-            {e.icon}
-            <span style={{marginLeft:5}}>{e.category}</span>
-            <span>{console.log(e.products[0].price)}</span>
-        </div>
-      )
-    } 
+              <>
 
-      // filterOption={filterOptions}
-      />
-      {selectedOption && <div style={{marginTop:20,lineHeight:'25px'}}>
-        <b>Selected Option:</b>{productIndex}
-        </div>}
-    </div>
+              {!showitem ? (
+                 <div  className='scroll-hori'> 
+                 <Menu pageName='Buyer Page'/>
+                 <div style={{ width:'98%', margin:'auto', marginTop:'1em', marginBottom:'1em'}}> 
+               <Select
+               placeholder="Select Option"
+               isClearable={true}
+               value={selectedOption}
+               options={productArray}
+               onChange={handleChange}
+               getOptionLabel={e => (
+                 <div style={{}} onClick={()=>setproductIndex(e.id)}>
+                     {e.icon}
+                     <span style={{marginLeft:5}}>{e.category}</span>
+                     <span>{console.log(e.products[0].price)}</span>
+                 </div>
+               )
+             } 
+         
+               // filterOption={filterOptions}
+               />
+             </div>
+         
+                   <div style={{width:'100%',}}>           
+                 {products.map((item)=>(
+                   <ProductCarts  handleShowItem={handleShowItem} food={item.image} name={item.name} price={item.price} quantity={item.quantity} location={item.location}/>
+                 ))}    
+                   </div>
+                   </div>
+         
+              ) : (<ProductItem />) }
+              </>
+  //       {showitem? : null}     
+  //   </div>
+  // )
 
-          <div style={{width:'100%',}}>
-          {/* <SelectDropDown  selectItems={productArray} selectedOption={selectedOption} handleChange={handleChange}/> */}
-
-           
-        {products.map((item)=>(
-          <ProductCarts food={item.image} name={item.name} price={item.price} quantity={item.quantity} location={item.location}/>
-        ))}    
-
-{/* {productArray
-  .filter((item) => item.category === selectedOption)
-  .map((item) => (
-    <ProductCarts
-      key={item.id}
-      food={item.image}
-      name={item.name}
-      price={item.price}
-      quantity={item.quantity}
-      location={item.location}
-    />
-  ))
-} */}
-          </div>        
-    </div>
   )
 }
 
