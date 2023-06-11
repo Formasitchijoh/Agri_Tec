@@ -12,27 +12,27 @@ import grain1 from '../resources/grain2.jpg'
         products:[
             {
                 name:'Piglet',
-                price:'122',
+                price:'200',
                 quantity:'5',
                 location:'Ngoundere',
                 image:<img src={livesk1} alt="item"/>
 
             },
             {
-               
-                name:'CoCoa',
-                price:'12573400',
-                quantity:'5',
-                location:'Ngoundere',
-                image:<img src={yam} alt="item"/>
+              
+                name:'Planatin',
+                price:'4520',
+                quantity:'4',
+                location:'Bali',
+                image:<img src={banana} alt="item"></img>
             },
             {
-                
-                name:'CoCoa',
-                price:'123200',
+               
+                name:'Beans',
+                price:'320',
                 quantity:'5',
-                location:'Ngoundere',
-                image:<img src={yam} alt="item"/>
+                location:'Mayui',
+                image:<img src={egusi} alt="item"></img>
             },
             {
                 name:'Piglet',
@@ -45,7 +45,7 @@ import grain1 from '../resources/grain2.jpg'
             {
                
                 name:'CoCoa',
-                price:'12573400',
+                price:'120',
                 quantity:'5',
                 location:'Ngoundere',
                 image:<img src={yam} alt="item"/>
@@ -63,7 +63,7 @@ import grain1 from '../resources/grain2.jpg'
         products:[
             {
                 name:'HucleBerry',
-                price:'190200',
+                price:'100',
                 quantity:'5',
                 location:'Yoalmu',
                 image:<img src={garri} alt="item"></img>
@@ -72,7 +72,7 @@ import grain1 from '../resources/grain2.jpg'
             {
               
                 name:'Planatin',
-                price:'45200',
+                price:'4520',
                 quantity:'4',
                 location:'Bali',
                 image:<img src={banana} alt="item"></img>
@@ -80,7 +80,7 @@ import grain1 from '../resources/grain2.jpg'
             {
                
                 name:'Beans',
-                price:'1243200',
+                price:'320',
                 quantity:'5',
                 location:'Mayui',
                 image:<img src={egusi} alt="item"></img>
@@ -96,7 +96,7 @@ import grain1 from '../resources/grain2.jpg'
             {
                
                 name:'Beans',
-                price:'1243200',
+                price:'14320',
                 quantity:'5',
                 location:'Mayui',
                 image:<img src={plantain} alt="item"></img>
@@ -113,7 +113,7 @@ import grain1 from '../resources/grain2.jpg'
         products:[ 
             {
                 name:'Beans',
-                price:'122200',
+                price:'1222',
                 quantity:'5',
                 location:'Mayui',
                 image:<img src={grain1} alt="item"></img>
@@ -128,7 +128,7 @@ import grain1 from '../resources/grain2.jpg'
             },
             {
                 name:'Beans',
-                price:'122200',
+                price:'1220',
                 quantity:'5',
                 location:'Mayui',
                 image:<img src={plantain} alt="item"></img>
@@ -151,7 +151,7 @@ import grain1 from '../resources/grain2.jpg'
         products:[ 
             {
                 name:'Beans',
-                price:'122200',
+                price:'1220',
                 quantity:'5',
                 location:'Mayui',
                 image:<img src={garri} alt="item"></img>
@@ -166,7 +166,7 @@ import grain1 from '../resources/grain2.jpg'
             },
             {
                 name:'Beans',
-                price:'122200',
+                price:'1200',
                 quantity:'5',
                 location:'Mayui',
                 image:<img src={yam} alt="item"></img>

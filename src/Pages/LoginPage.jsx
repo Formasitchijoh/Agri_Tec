@@ -116,8 +116,8 @@ const validationSchema =
        
       <MyTextInput label="Email Address" name="email" type="email" /> 
        <MyPasswordInput label='PassWord' name='password' type={isvisible} className="password" isvisible={isvisible} handleHidePassword={handleHidePassword} handleShowPassword={handleShowPassword}/>
-       <p className='have-account'>Already have an account?<Link to="/">Sign Up </Link></p>
-    <Link to='/'><button  style={{marginTop:'3em',  marginLeft:'6em',width:'8em', height:'3em', color:'black', fontSize:'0.8em', fontWeight:'40em'}}>Login</button> </Link>   
+       <p className='have-account'>Already have an account?<Link to="/SignUpPage">Sign Up </Link></p>
+    <Link to='/BuyerPage'><button  style={{marginTop:'3em',  marginLeft:'6em',width:'8em', height:'3em', color:'black', fontSize:'0.8em', fontWeight:'40em'}}>Login</button> </Link>   
     </Form> 
     
         )}
